@@ -1,17 +1,15 @@
 {
   "name": "native-styled",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Microlibrary for making native design systems approachable",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stevensanseau/styled-native.git"
+    "url": "git+git@github.com:Steven-Sanseau/native-styled.git"
   },
   "author": "Steven Sanséau <steven.sanseau@gmail.com>",
-  "license": "MIT",
   "keywords": [
     "react-native",
-    "styled",
-    "themable"
+    "styled"
   ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
