@@ -1,12 +1,10 @@
-import { StaticTheme } from './ThemeContext'
-
 export function resolveShorthands({
   aliases,
   theme,
 }: {
   aliases: {}
-  theme: StaticTheme
-}) {
+  theme: any
+}): object {
   return Object.entries(aliases).reduce((all, [property, value]) => {
     const shorthand = theme?.shorthands[property]
 
@@ -30,8 +28,8 @@ export function resolveAliases({
   theme,
 }: {
   styles: object
-  theme: StaticTheme
-}) {
+  theme: any
+}): object {
   return Object.entries(styles).reduce((all, [property, value]) => {
     const alias = theme?.aliases[property]
 

@@ -73,7 +73,6 @@ export declare const defaultTheme: {
             body: string;
             heading: string;
         };
-        fontFamily: {};
         lineHeights: {
             1: number;
             tight: number;

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Dimensions } from 'react-native'
-import { useTheme } from './ThemeContext'
 
 export function useViewportWidth(): number {
   const [width, setWidth] = React.useState<number>(0)
@@ -21,15 +20,8 @@ export function useViewportWidth(): number {
 }
 
 export function useBreakpoint(): string {
-  const theme = useTheme()
-
-  if (!theme) {
-    return 'xs'
-  }
-
-  const { breakpoints } = theme
-
   const width = useViewportWidth()
+  const breakpoints = { xs: 640, sm: 768, md: 1024, lg: 1280 }
 
   return React.useMemo(() => {
     return (
@@ -37,7 +29,7 @@ export function useBreakpoint(): string {
         .reverse()
         .find((breakpoint) => width > breakpoints[breakpoint]) || 'xs'
     )
-  }, [width])
+  }, [width, breakpoints])
 }
 
 export function useResponsiveProps(): (arg0: any) => string {

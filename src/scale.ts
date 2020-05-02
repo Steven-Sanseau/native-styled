@@ -8,7 +8,10 @@ export const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get(
 const wscale: number = SCREEN_WIDTH / 375
 const hscale: number = SCREEN_HEIGHT / 667
 
-export function normalize(size: number, based: 'width' | 'height' = 'width') {
+export function normalize(
+  size: number,
+  based: 'width' | 'height' = 'width',
+): number {
   const newSize = based === 'height' ? size * hscale : size * wscale
   if (Platform.OS === 'ios') {
     return Math.round(PixelRatio.roundToNearestPixel(newSize))
@@ -34,6 +37,9 @@ export function getScaleValue({
 
   if (typeof value === 'string' && new RegExp('rpx').test(value)) {
     return normalize(parseInt(value.replace('rpx', '')))
+  }
+  if (typeof value === 'string' && new RegExp('hpx').test(value)) {
+    return normalize(parseInt(value.replace('hpx', '')), 'height')
   }
 
   return value

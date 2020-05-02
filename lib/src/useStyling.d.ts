@@ -1,1 +1,1 @@
-export declare function useStyling(): (arg0: object) => object;
+export declare const useStyling: () => (styles: object) => object;

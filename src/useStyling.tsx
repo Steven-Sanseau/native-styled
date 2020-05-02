@@ -3,14 +3,18 @@ import { useResponsiveProps } from './breakpoints'
 import { getScaleValue } from './scale'
 import { resolveShorthands, resolveAliases } from './resolver'
 
-export function useStyling(): (arg0: object) => object {
+export const useStyling = (): ((styles: object) => object) => {
   const theme = useTheme()
   const responsive = useResponsiveProps()
 
-  return function sx(styles: object) {
+  return (styles: object) => {
+    if (!styles) {
+      return null
+    }
     if (!theme) {
       return styles
     }
+
     const aliases = resolveAliases({ styles, theme })
     const shorthands = resolveShorthands({ aliases, theme })
 

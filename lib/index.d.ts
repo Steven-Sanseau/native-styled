@@ -1,3 +1,4 @@
-export { ThemeContext, useTheme } from './ThemeContext';
-export { useStyling } from './useStyling';
-export { defaultTheme } from './default';
+export { ThemeProvider, useTheme } from './src/ThemeContext';
+export { useStyling } from './src/useStyling';
+export { useBreakpoint } from './src/breakpoints';
+export { defaultTheme } from './src/default';

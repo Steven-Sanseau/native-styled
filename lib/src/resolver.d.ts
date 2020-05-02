@@ -1,9 +1,8 @@
-import { StaticTheme } from './ThemeContext';
 export declare function resolveShorthands({ aliases, theme, }: {
     aliases: {};
-    theme: StaticTheme;
-}): {};
+    theme: any;
+}): object;
 export declare function resolveAliases({ styles, theme, }: {
     styles: object;
-    theme: StaticTheme;
-}): {};
+    theme: any;
+}): object;
